@@ -1,4 +1,4 @@
-import livetrack.extract, unittest
+import livetrack.extract, unittest, sys
 
 class TestExtract(unittest.TestCase):
 	def test_extractLinks(self):
@@ -16,7 +16,10 @@ class TestExtract(unittest.TestCase):
 		self.assertIn("http://test/test1.ext", links)
 		self.assertIn("http://test/test2.other", links)
 		self.assertIn("http://test/test/test5.ext?something=somethingElse", links)
-		
+
 if __name__ == '__main__':
-	unittest.main()
+	suite = unittest.TestLoader().loadTestsFromTestCase(TestExtract)
+	result = unittest.TextTestRunner().run(suite)
+	if not result.wasSuccessful():
+		sys.exit(1)
 
