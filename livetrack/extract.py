@@ -1,4 +1,6 @@
-import urllib,re
+import urllib, re
+from xml.etree.ElementTree import ElementTree
+from xml.etree.ElementTree import XMLParser
 
 # Extract kml links from target url
 # Python 2.7
@@ -38,3 +40,14 @@ def extractLinks(content, url, extension = ""):
 		else:
 			links.add(baseSlash+pathMatch)
 	return links
+
+def extractPos(url):
+	links = extractKml(url)
+	for link in links:
+		print link
+		data = urllib.urlopen(link)
+		tree = ElementTree()
+		parser = XMLParser(encoding="iso-8859-1")
+		tree.parse(data, parser=parser)
+		posName = tree.findtext('kml')
+		print posName
