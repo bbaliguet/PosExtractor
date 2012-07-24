@@ -43,11 +43,22 @@ def extractLinks(content, url, extension = ""):
 
 def extractPos(url):
 	links = extractKml(url)
+	rootNameSpaceReg = re.compile("\{.*\}", re.IGNORECASE)
+	rootNamespace = None
 	for link in links:
-		print link
-		data = urllib.urlopen(link)
-		tree = ElementTree()
-		parser = XMLParser(encoding="iso-8859-1")
-		tree.parse(data, parser=parser)
-		posName = tree.findtext('kml')
-		print posName
+		try:
+			data = urllib.urlopen(link)
+			tree = ElementTree()
+			parser = XMLParser(encoding="iso-8859-1")
+			tree.parse(data, parser=parser)
+			# do this only once, assume all files have the same
+			if (rootNamespace == None):
+				rootNamespace = rootNameSpaceReg.findall(tree.getroot().tag)[0]
+
+			name = tree.find(".//{0}Document//{0}name".format(rootNamespace)).text
+			unparsed = tree.find(".//{0}Document//{0}Placemark//{0}description".format(rootNamespace)).text
+			print name
+			print unparsed
+		except:
+			pass
+
