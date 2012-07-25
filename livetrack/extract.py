@@ -1,9 +1,10 @@
+# Python 2.7
+
 import urllib, re
-from xml.etree.ElementTree import ElementTree
-from xml.etree.ElementTree import XMLParser
+from xml.etree.cElementTree import ElementTree
+from xml.etree.cElementTree import XMLParser
 
 # Extract kml links from target url
-# Python 2.7
 def extractKml(url):
 	data = urllib.urlopen(url)
 	content = data.read()
@@ -62,3 +63,6 @@ def extractPos(url):
 		except:
 			pass
 
+def propRawExtract(prop, raw):
+	search = re.search("(?<=<b>" + prop + "\: <\/b>).*(?=<br>)", raw)
+	return search.group(0).strip()

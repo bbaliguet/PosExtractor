@@ -1,17 +1,18 @@
 import re
+from livetrack import extract
 from google.appengine.ext import db
 
-class point(db.Model):
-	index = db.IntegerProperty()
-	latitude = db.FloatProperty()
-	longitude = db.FloatProperty()
+class Tracking(db.Model):
+	active = db.BooleanProperty()
+	url = db.StringProperty()
 
-class object(db.Model):
+class MovingObject(db.Model):
 	name = db.StringProperty()
 	rating = db.FloatProperty()
 
-class update(db.Model):
+class PosUpdate(db.Model):
 	pos = db.GeoPtProperty()
 	speed = db.FloatProperty()
 	course = db.FloatProperty()
 	date = db.DateProperty()
+

@@ -1,15 +1,18 @@
-import livetrack.extract, unittest, sys
+# -*- coding: UTF-8 -*-
+
+import unittest, sys
+from livetrack import extract
 
 class TestExtract(unittest.TestCase):
 	def test_extractLinks(self):
 		test = open("test/testExtractLinks.html")
 		testContent = test.read()
 		test.close()
-		links = livetrack.extract.extractLinks(testContent, "http://test/test", ".ext")
+		links = extract.extractLinks(testContent, "http://test/test", ".ext")
 		self.assertIn("http://test/test1.ext", links)
 		self.assertIn("http://test//test4.ext", links)
 
-		links = livetrack.extract.extractLinks(testContent, "http://test/test")
+		links = extract.extractLinks(testContent, "http://test/test")
 		self.assertIn("http://test/test3.ext#anchor", links)
 		self.assertIn("http://google.com", links)
 		self.assertIn("http://test//test4.ext", links)
@@ -17,6 +20,26 @@ class TestExtract(unittest.TestCase):
 		self.assertIn("http://test/test2.other", links)
 		self.assertIn("http://test/test/test5.ext?something=somethingElse", links)
 
+	def test_updateModel(self):
+		testRaw="""<hr>
+<b>Skipper: </b>René BERSON<br>
+<b>Equipier: </b>Franck BERSON<br>
+<b>Bateau: </b>BAVARIA 35 MATCH<br>
+<b>Classe: </b>HN<br>
+<hr>
+<b>Date et heure du dernier point : </b><br>
+13/08/2011 21:40:21 (heure d'été)<br>
+<b>Dernière mise à jour de la carte: </b><br>
+15/08/2011 01:59:55<br>
+<hr>
+<b>Latitude: </b> N 47 43'30''<br>
+<b>Longitude: </b> W 003 20'59''<br>
+<b>Cap: </b> 111 °<br>
+<b>Vitesse: </b> 0.38 kts<br>
+<b>Distance parcourue: </b> 439.72 Nm<br>
+<hr>"""
+		lat = extract.propRawExtract("Latitude", testRaw)
+		self.assertEqual(lat, "N 47 43'30''")
 if __name__ == '__main__':
 	suite = unittest.TestLoader().loadTestsFromTestCase(TestExtract)
 	result = unittest.TextTestRunner().run(suite)
