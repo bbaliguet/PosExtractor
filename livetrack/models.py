@@ -3,7 +3,7 @@ from livetrack import extract
 from google.appengine.ext import db
 
 class Tracking(db.Model):
-	active = db.BooleanProperty()
+	active = db.BooleanProperty(default = False)
 	url = db.StringProperty()
 
 class MovingObject(db.Model):
@@ -15,4 +15,5 @@ class PosUpdate(db.Model):
 	speed = db.FloatProperty()
 	course = db.FloatProperty()
 	date = db.DateProperty()
+
 

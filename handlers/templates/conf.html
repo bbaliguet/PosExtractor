@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<title>Configuration</title>
     <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
   </head>
   <body>
@@ -8,5 +9,10 @@
       <input type="text" name="url" placeholder="URL" class="input-medium"/>
       <input type="submit" class="btn" value="Add"/>
     </form>
+    {% for tracking in trackings %}
+    	<div class="tracking{% if tracking.active %} active{% endif %}" id="{{tracking.key()}}">
+    		{{tracking.url}}
+    	</div>
+    {% endfor %}
   </body>
 </html>
