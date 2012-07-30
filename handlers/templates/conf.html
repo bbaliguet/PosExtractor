@@ -2,53 +2,32 @@
 <html>
   <head>
   	<title>Configuration</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
-    <style type="text/css">
-
-header {
-  color: white;
-  background: #EEE;
-  padding-top: 10px;
-  padding-left: 10px;
-  font-size: 2em
-  text-transform: capitalize;
-  margin-bottom: 20px;
-}
-
-#configuration {
-  background: #DDD;
-  color: #CCC;
-}
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/conf.css" />
   </head>
   <body>
     <header>
-      Configuration  
+      <a href="{{logout_url}}" title="logout" class="pull-right"><i class="icon-off"></i> logout</a>
+      <h1>Configuration</h1> 
     </header>
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span4 form-horizontal" id="configuration">
-          <div class="input-append">
-            <input type="text" name="url" placeholder="URL"
-             class="input-medium"/><a href="#" class="btn">
-              <i class="icon-plus"></i>
-            </a>
-          </div>
-
-          {% for tracking in trackings %}
-          	<div class="tracking{% if tracking.active %} active{% endif %}" id="{{tracking.key()}}">
-          		{{tracking.url}}
-          	</div>
-          {% endfor %}
-        </div>
-        <div class="span8">
-          content
-        </div>
+    
+    <div id="configuration">
+      <div class="input-append">
+        <input type="text" name="url" placeholder="URL"
+         class="input-medium" id="addUrl"/><a href="#" class="btn" id="adUrlBtn">
+          <i class="icon-plus"></i>
+        </a>
       </div>
+
+      {% for tracking in trackings %}
+      	<div class="tracking{% if tracking.active %} active{% endif %}" id="{{tracking.key()}}">
+      		{{tracking.url}}
+      	</div>
+      {% endfor %}
     </div>
-    <script type="text/javascript" src="/static/lib/zepto.js"></script>
+
+    <script type="text/javascript" src="/static/lib/zepto.min.js"></script>
     <script type="text/javascript" src="/static/conf.js"></script>
   </body>
 </html>
