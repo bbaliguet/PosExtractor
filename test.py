@@ -4,15 +4,15 @@ import unittest, sys
 from livetrack import extract
 
 class TestExtract(unittest.TestCase):
-	def test_extractLinks(self):
+	def test_extract_links(self):
 		test = open("test/testExtractLinks.html")
-		testContent = test.read()
+		test_content = test.read()
 		test.close()
-		links = extract.extractLinks(testContent, "http://test/test", ".ext")
+		links = extract.extract_links(test_content, "http://test/test", ".ext")
 		self.assertIn("http://test/test1.ext", links)
 		self.assertIn("http://test//test4.ext", links)
 
-		links = extract.extractLinks(testContent, "http://test/test")
+		links = extract.extract_links(test_content, "http://test/test")
 		self.assertIn("http://test/test3.ext#anchor", links)
 		self.assertIn("http://google.com", links)
 		self.assertIn("http://test//test4.ext", links)
@@ -21,7 +21,7 @@ class TestExtract(unittest.TestCase):
 		self.assertIn("http://test/test/test5.ext?something=somethingElse", links)
 
 	def test_updateModel(self):
-		testRaw="""<hr>
+		raw="""<hr>
 <b>Skipper: </b>René BERSON<br>
 <b>Equipier: </b>Franck BERSON<br>
 <b>Bateau: </b>BAVARIA 35 MATCH<br>
@@ -38,8 +38,9 @@ class TestExtract(unittest.TestCase):
 <b>Vitesse: </b> 0.38 kts<br>
 <b>Distance parcourue: </b> 439.72 Nm<br>
 <hr>"""
-		lat = extract.propRawExtract("Latitude", testRaw)
+		lat = extract.prop_raw_extract("Latitude", raw)
 		self.assertEqual(lat, "N 47 43'30''")
+
 if __name__ == '__main__':
 	suite = unittest.TestLoader().loadTestsFromTestCase(TestExtract)
 	result = unittest.TextTestRunner().run(suite)

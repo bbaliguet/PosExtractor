@@ -5,7 +5,7 @@ from handlers import conf
 
 class MainHandler(webapp2.RequestHandler):
 	def get(self):
-		self.response.out.write('Nothing here !')
+		self.response.status = 417
 
 
 app = webapp2.WSGIApplication([

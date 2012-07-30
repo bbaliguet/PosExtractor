@@ -4,7 +4,7 @@ from google.appengine.ext import db
 
 class Tracking(db.Model):
 	active = db.BooleanProperty(default = False)
-	url = db.StringProperty()
+	url = db.StringProperty(required = True)
 
 class MovingObject(db.Model):
 	name = db.StringProperty()
