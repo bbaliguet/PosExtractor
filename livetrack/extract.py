@@ -46,6 +46,7 @@ def extract_pos(url):
 	links = extract_kml(url)
 	root_namespace_reg = re.compile("\{.*\}", re.IGNORECASE)
 	root_namespace = None
+	results = {}
 	for link in links:
 		try:
 			data = urllib.urlopen(link)
@@ -58,10 +59,10 @@ def extract_pos(url):
 
 			name = tree.find(".//{0}Document//{0}name".format(root_namespace)).text
 			unparsed = tree.find(".//{0}Document//{0}Placemark//{0}description".format(root_namespace)).text
-			print name
-			print unparsed
+			result[name] = unparsed
 		except:
 			pass
+	return results
 
 def prop_raw_extract(prop, raw):
 	search = re.search("(?<=<b>" + prop + "\: <\/b>).*(?=<br>)", raw)

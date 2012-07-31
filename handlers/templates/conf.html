@@ -23,6 +23,9 @@
       {% for tracking in trackings %}
       	<div class="tracking{% if tracking.active %} active{% endif %}" id="{{tracking.key()}}">
       		{{tracking.url}}
+          <a href="#" class="pull-right" title="delete">
+            <i class="icon-remove"></i>
+          </a>
       	</div>
       {% endfor %}
     </div>

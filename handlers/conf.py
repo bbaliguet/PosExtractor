@@ -10,7 +10,7 @@ def check_user(handler):
 	if user:
 		return True
 	else:	
-		self.response.status = 403
+		handler.response.status = 403
 		return False
 
 class ConfHandler(webapp2.RequestHandler):
@@ -35,22 +35,20 @@ class ConfHandler(webapp2.RequestHandler):
 
 	def delete(self):
 		if check_user(self):
-			id = self.request.get("id")
-			tracking = models.Tracking.get_by_key_name(id)
+			key = self.request.get("id")
+			tracking = models.Tracking.get(key)
 			if tracking != None:
-				logging.debug(tracking)
 				tracking.delete()
 			else:
 				self.response.status = 400
 
 	def put(self):
 		if check_user(self):
-			id = self.request.get("id")
-			print id
-			tracking = models.Tracking.get_by_key_name(id)
+			key = self.request.get("id")
+			tracking = models.Tracking.get(key)
 			if tracking != None:
 				tracking.active = not tracking.active
-				self.response.out.write("true" if tracking.active else "false")
+				self.response.out.write("1" if tracking.active else "0")
 				tracking.put()
 			else:
 				self.response.status = 400
