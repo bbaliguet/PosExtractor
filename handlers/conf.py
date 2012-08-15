@@ -1,6 +1,6 @@
 import webapp2, jinja2, os, logging
 from google.appengine.api import users
-from livetrack import models
+from livetrack import models, extract
 
 # jinja configuration
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -49,6 +49,9 @@ class ConfHandler(webapp2.RequestHandler):
 			if tracking != None:
 				tracking.active = not tracking.active
 				self.response.out.write("1" if tracking.active else "0")
+				if tracking.active:
+					links = extract.extract_kml(tracking.url)
+					tracking.kmls = links
 				tracking.put()
 			else:
 				self.response.status = 400

@@ -2,7 +2,7 @@ application: kml-live-track
 version: 0-1
 runtime: python27
 api_version: 1
-threadsafe: yes
+threadsafe: no
 
 handlers:
 - url: /favicon\.ico
@@ -12,8 +12,15 @@ handlers:
 - url: /static
   static_dir: static
 
+- url: /test/traces
+  static_dir: test/traces
+
 - url: .*
   script: main.app
+
+- url: /_ah/queue/deferred
+  script: $PYTHON_LIB/google/appengine/ext/deferred/deferred.py
+  login: admin
 
 libraries:
 - name: webapp2

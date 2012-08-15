@@ -1,5 +1,5 @@
 import urllib
-from livetrack.extract import extract_kml
+from livetrack.extract import extract_kml, extract_pos
 from xml.etree.ElementTree import ElementTree
 from xml.etree.ElementTree import XMLParser
 
@@ -13,5 +13,11 @@ def extract():
 		f = open(target, "w")
 		f.write(data.read())
 
+def test_extract_local():
+	links = extract_kml("http://www.sat-view.fr/comptes/celtikup/traces/")
+	for link in links:
+		raw = extract_pos(link)
+		print raw
+
 if __name__ == '__main__':
-	extract()
+	test_extract_local()

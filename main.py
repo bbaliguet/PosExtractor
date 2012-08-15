@@ -1,6 +1,6 @@
 import webapp2, jinja2, os
 from google.appengine.api import users
-from handlers import conf, extract
+from handlers import conf, extract, alltrack
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -11,5 +11,6 @@ class MainHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
 	('/conf', conf.ConfHandler),
+	('/all', alltrack.AllHandler),	
 	('/_extract', extract.ExtractHandler)],
 	debug=True)

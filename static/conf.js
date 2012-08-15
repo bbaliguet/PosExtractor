@@ -10,7 +10,10 @@ $(function () {
 				url: '/conf',
 				data: { url: url },
 				success: function(data){
-					element.attr("id", data);
+					element.attr("id", data)
+						.append('<a href="#" class="pull-right" title="delete">' + 
+            					'<i class="icon-remove"></i></a>')
+						.
 					element = null;
 				},
 				error: function(xhr, type){

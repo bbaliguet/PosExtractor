@@ -40,6 +40,8 @@ class TestExtract(unittest.TestCase):
 <hr>"""
 		lat = extract.prop_raw_extract("Latitude", raw)
 		self.assertEqual(lat, "N 47 43'30''")
+		last_update = extract.prop_raw_extract("Date et heure du dernier point ", raw, True)
+		self.assertEqual(last_update, "13/08/2011 21:40:21 (heure d'été)")
 
 if __name__ == '__main__':
 	suite = unittest.TestLoader().loadTestsFromTestCase(TestExtract)

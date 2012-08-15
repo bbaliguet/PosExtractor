@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Extract</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" />
+  </head>
+  <body style="padding:5px;">
+    
+    <table class="table table-striped table-bordered table-condensed">
+      <tr>
+        <th>Nom</th>
+        <th>Vitesse</th>
+        <th>Cap</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Arrivée</th>
+        <th>Date</th>
+      </tr>
+      {% for extract in extracts %}
+      	<tr id="tr_{{extract.name}}">
+          <td>{{extract.name}}</td>
+          <td>{{extract.speed}}</td>
+          <td>{{extract.course}}</td>
+          <td>{{extract.str_latitude}}</td>
+          <td>{{extract.str_longitude}}</td>
+          <td>{{extract.dtf}}</td>
+          <td>{{extract.last_update}}</td>
+      	</tr>
+      {% endfor %}
+    </table>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="{{verticalAdjust}}">
+      {% for extract in extracts %}
+        <circle cx="{{extract.posX}}" cy="{{extract.posY}}" r="5" fill="#CCC" id="circle_{{extract.name}}" title="{{extract.name}}"/>
+      {% endfor %}
+    </svg>
+    <script type="text/javascript" src="/static/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="/static/all.js"></script>
+  </body>
+</html>

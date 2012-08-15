@@ -1,4 +1,4 @@
 cron:
-- description: Extrac latest traces
-  url: /_tasks/extract
-  schedule: every 5 minutes
+# - description: Extrac latest traces
+#  url: /_extract
+#  schedule: every 5 minutes

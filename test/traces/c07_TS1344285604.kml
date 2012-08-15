@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>URUKAI</name>
+    <description> Mise a jour le 06/08/12 20:37:31 UTC</description>
+    <Style id="icone_4153_0">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_0.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Style id="icone_4153_1">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_1.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Style id="icone_4153_2">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_2.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Style id="icone_4153_3">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_3.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Style id="icone_4153_4">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_4.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Style id="icone_4153_5">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_5.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Style id="icone_4153_6">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_6.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Style id="icone_4153_7">
+      <IconStyle>
+        <Icon>
+          <href>http://www.sat-view.fr/icones/voilier_rouge/voilier_rouge_7.png</href>
+        </Icon>
+        <scale>1</scale>
+        <hotSpot x="0.5" y="0.2" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <name>URUKAI</name>
+      <description><![CDATA[<hr>
+<b>Skipper: </b>Catherine POURRE<br>
+<b>Equipier: </b>Goulven ROYER<br>
+<b>Bateau: </b>FIRST 40<br>
+<b>Classe: </b>IRC<br>
+<hr>
+<b>Date et heure du dernier point : </b><br>
+06/08/2012 03:18:42 (heure d'été)<br>
+<b>Dernière mise à jour de la carte: </b><br>
+06/08/2012 22:37:31<br>
+<hr>
+<b>Latitude: </b> N 48°05'51''<br>
+<b>Longitude: </b> W 004°20'21''<br>
+<b>Cap: </b> 0 °<br>
+<b>Vitesse: </b> 0.02 kts<br>
+<b>Distance parcourue: </b> 86.08 Nm<br>
+<hr>]]></description>
+      <styleUrl>#icone_4153_0</styleUrl>
+      <Point>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>-4.339420000000000,48.097750000000000,0</coordinates>
+      </Point>
+    </Placemark>
+    <Style id="ligne_4154_t_12">
+      <LineStyle>
+        <color>a40000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_11">
+      <LineStyle>
+        <color>960000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_10">
+      <LineStyle>
+        <color>880000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_9">
+      <LineStyle>
+        <color>7b0000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_8">
+      <LineStyle>
+        <color>6d0000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_7">
+      <LineStyle>
+        <color>5f0000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_6">
+      <LineStyle>
+        <color>520000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_5">
+      <LineStyle>
+        <color>440000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_4">
+      <LineStyle>
+        <color>360000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_3">
+      <LineStyle>
+        <color>290000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_2">
+      <LineStyle>
+        <color>1b0000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_1">
+      <LineStyle>
+        <color>0d0000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="ligne_4154_t_0">
+      <LineStyle>
+        <color>000000ff</color>
+        <colorMode>normal</colorMode>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>URUKAI</name>
+      <description></description>
+      <styleUrl>#ligne_4154_t_12</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+		-4.339420000000000,48.097750000000000,0
+		-4.339420000000000,48.097800000000000,0
+	-4.339420000000000,48.097800000000000,0
+		-4.339360000000000,48.097790000000000,0
+	-4.339360000000000,48.097790000000000,0
+		-4.340730000000000,48.104140000000000,0
+	-4.340730000000000,48.104140000000000,0
+		-4.339110000000000,48.105960000000000,0
+	-4.339110000000000,48.105960000000000,0
+		-4.352840000000000,48.116420000000000,0
+	-4.352840000000000,48.116420000000000,0
+		-4.379150000000000,48.115850000000000,0
+	-4.379150000000000,48.115850000000000,0
+		-4.407290000000000,48.115990000000000,0
+	-4.407290000000000,48.115990000000000,0
+		-4.434930000000000,48.115520000000000,0
+	-4.434930000000000,48.115520000000000,0
+		-4.464710000000000,48.112600000000000,0
+	-4.464710000000000,48.112600000000000,0
+		-4.494020000000000,48.108010000000000,0
+	-4.494020000000000,48.108010000000000,0
+		-4.521660000000000,48.102820000000000,0
+	-4.521660000000000,48.102820000000000,0
+		-4.549040000000000,48.099640000000000,0
+	-4.549040000000000,48.099640000000000,0
+		-4.578310000000000,48.095710000000000,0
+	-4.578310000000000,48.095710000000000,0
+		-4.597360000000000,48.092230000000000,0
+	-4.597360000000000,48.092230000000000,0
+		-4.636020000000000,48.086520000000000,0
+	-4.636020000000000,48.086520000000000,0
+		-4.666470000000000,48.083470000000000,0
+	-4.666470000000000,48.083470000000000,0
+		-4.695310000000000,48.077890000000000,0
+	-4.695310000000000,48.077890000000000,0
+		-4.720110000000000,48.072140000000000,0
+	-4.720110000000000,48.072140000000000,0
+		-4.740480000000000,48.060110000000000,0
+	-4.740480000000000,48.060110000000000,0
+		-4.760100000000000,48.046240000000000,0
+	-4.760100000000000,48.046240000000000,0
+		-4.755740000000000,48.034980000000000,0
+	-4.755740000000000,48.034980000000000,0
+		-4.695470000000000,48.017710000000000,0
+	-4.695470000000000,48.017710000000000,0
+		-4.667660000000000,48.023550000000000,0
+	-4.667660000000000,48.023550000000000,0
+		-4.655990000000000,48.004110000000000,0
+	-4.655990000000000,48.004110000000000,0
+		-4.649020000000000,47.990090000000000,0
+	-4.649020000000000,47.990090000000000,0
+		-4.627990000000000,47.984170000000000,0
+	-4.627990000000000,47.984170000000000,0
+		-4.602600000000000,47.995000000000000,0
+	-4.602600000000000,47.995000000000000,0
+		-4.580870000000000,47.995300000000000,0
+	-4.580870000000000,47.995300000000000,0
+		-4.569700000000000,47.978500000000000,0
+	-4.569700000000000,47.978500000000000,0
+		-4.558870000000000,47.961810000000000,0
+	-4.558870000000000,47.961810000000000,0
+		-4.545440000000000,47.944760000000000,0
+	-4.545440000000000,47.944760000000000,0
+		-4.532200000000000,47.927720000000000,0
+	-4.532200000000000,47.927720000000000,0
+		-4.493900000000000,47.882060000000000,0
+	-4.493900000000000,47.882060000000000,0
+		-4.477480000000000,47.864270000000000,0
+	-4.477480000000000,47.864270000000000,0
+		-4.462460000000000,47.847700000000000,0
+	-4.462460000000000,47.847700000000000,0
+		-4.448270000000000,47.832980000000000,0
+	-4.448270000000000,47.832980000000000,0
+		-4.432740000000000,47.817250000000000,0
+	-4.432740000000000,47.817250000000000,0
+		-4.415740000000000,47.802560000000000,0
+	-4.415740000000000,47.802560000000000,0
+		-4.366790000000000,47.783450000000000,0
+	-4.366790000000000,47.783450000000000,0
+		-4.350310000000000,47.774090000000000,0
+	-4.350310000000000,47.774090000000000,0
+		-4.334990000000000,47.764370000000000,0
+	-4.334990000000000,47.764370000000000,0
+		-4.314300000000000,47.775050000000000,0
+	-4.314300000000000,47.775050000000000,0
+		-4.295590000000000,47.765910000000000,0
+	-4.295590000000000,47.765910000000000,0
+		-4.278250000000000,47.753550000000000,0
+	-4.278250000000000,47.753550000000000,0
+		-4.258760000000000,47.756320000000000,0
+	-4.258760000000000,47.756320000000000,0
+		-4.241250000000000,47.752720000000000,0
+	-4.241250000000000,47.752720000000000,0
+		-4.224430000000000,47.766580000000000,0
+	-4.224430000000000,47.766580000000000,0
+		-4.205690000000000,47.778950000000000,0
+	-4.205690000000000,47.778950000000000,0
+		-4.188090000000000,47.785170000000000,0
+	-4.188090000000000,47.785170000000000,0
+		-4.169100000000000,47.786530000000000,0
+	-4.169100000000000,47.786530000000000,0
+		-4.156620000000000,47.795940000000000,0
+	-4.156620000000000,47.795940000000000,0
+		-4.142090000000000,47.802470000000000,0
+	-4.142090000000000,47.802470000000000,0
+		-4.110720000000000,47.813780000000000,0
+	-4.110720000000000,47.813780000000000,0
+		-4.100850000000000,47.829700000000000,0
+	-4.100850000000000,47.829700000000000,0
+		-4.071200000000000,47.823750000000000,0
+	-4.071200000000000,47.823750000000000,0
+		-4.043430000000000,47.816540000000000,0
+	-4.043430000000000,47.816540000000000,0
+		-4.020080000000000,47.811530000000000,0
+	-4.020080000000000,47.811530000000000,0
+		-3.992610000000000,47.802600000000000,0
+	-3.992610000000000,47.802600000000000,0
+		-3.965610000000000,47.792780000000000,0
+	-3.965610000000000,47.792780000000000,0
+		-3.914790000000000,47.773410000000000,0
+	-3.914790000000000,47.773410000000000,0
+		-3.573150000000000,47.702450000000000,0
+	-3.573150000000000,47.702450000000000,0
+		-3.513890000000000,47.695560000000000,0
+	-3.513890000000000,47.695560000000000,0
+		-3.435460000000000,47.690990000000000,0
+	</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
