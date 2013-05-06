@@ -25,7 +25,12 @@ header a {
 }
 
 #configuration input {
-	width:355px;
+	width: 355px;
+}
+
+#configuration select {
+  width: 400px;
+  margin-bottom: 5px;
 }
 
 .tracking {

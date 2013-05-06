@@ -29,7 +29,7 @@ class ConfHandler(webapp2.RequestHandler):
 	
 	def post(self):
 		if check_user(self):
-			newTracking = models.Tracking(url = self.request.get("url"))
+			newTracking = models.Tracking(url = self.request.get("url"), dataType= self.request.get("type"))
 			newTracking.put()
 			self.response.out.write(newTracking.key())
 
@@ -49,7 +49,7 @@ class ConfHandler(webapp2.RequestHandler):
 			if tracking != None:
 				tracking.active = not tracking.active
 				self.response.out.write("1" if tracking.active else "0")
-				if tracking.active:
+				if tracking.active and tracking.dataType == 'kmls':
 					links = extract.extract_kml(tracking.url)
 					tracking.kmls = links
 				tracking.put()

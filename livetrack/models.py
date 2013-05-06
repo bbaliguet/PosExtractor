@@ -5,6 +5,7 @@ from google.appengine.ext import db
 class Tracking(db.Model):
 	active = db.BooleanProperty(default = False)
 	url = db.StringProperty(required = True)
+	dataType = db.StringProperty(required = True)
 	kmls = db.StringListProperty()
 
 class MovingObject(db.Model):

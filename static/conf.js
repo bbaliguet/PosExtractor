@@ -1,6 +1,6 @@
 $(function () {
 	var add = function(event) {
-		var input =  $("#addUrl"), url = input.val(), element
+		var input =  $("#addUrl"), url = input.val(), type = $("#type").val(), element
 		if (url) {
 			// fake add it. If it fails ... well it fails !
 			element = $(document.createElement("div")).addClass("tracking").html(url)
@@ -8,7 +8,7 @@ $(function () {
 			$.ajax({
 				type: 'POST',
 				url: '/conf',
-				data: { url: url },
+				data: { url: url, type : type },
 				success: function(data){
 					element.attr("id", data)
 						.append('<a href="#" class="pull-right" title="delete">' + 
