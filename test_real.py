@@ -5,12 +5,13 @@ from xml.etree.ElementTree import ElementTree
 from xml.etree.ElementTree import XMLParser
 
 
-def extract():
-	links = extract_kml("http://www.sat-view.fr/comptes/celtikup/traces/")
-	for link in links:
+def test_extract():
+	# links = extract_kml("http://www.sat-view.fr/comptes/celtikup/traces/")
+	links = extract_kml("http://www.sat-view.fr/comptes/snst/traces/")
+	for link_struct in links:
+		link = link_struct.link
 		data = urllib.urlopen(link)
-		target = "test/traces/" + link[47:len(link)]
-		print target
+		target = "test/traces/" + link[43:len(link)]
 		f = open(target, "w")
 		f.write(data.read())
 
@@ -26,4 +27,4 @@ def test_extract_yb():
 		print team
 
 if __name__ == '__main__':
-	test_extract_yb()
+	test_extract()

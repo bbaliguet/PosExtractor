@@ -5,6 +5,14 @@ import urllib, re, geo
 from datetime import datetime
 from xml.etree.cElementTree import ElementTree
 from xml.etree.cElementTree import XMLParser
+from bs4 import BeautifulSoup
+
+months = {"Jul" : "07", "Aug" : "08"}
+
+class ExtractedLink:
+	def __init__(self, link, date):
+		self.link = link
+		self.date = date
 
 # Extract kml links from target url
 def extract_kml(url):
@@ -14,35 +22,18 @@ def extract_kml(url):
 	return links
 
 def extract_links(content, url, extension = ""):
+	parsed_html = BeautifulSoup(content)
+	all_links = parsed_html.find_all("a")
+
 	links = set([])
-	pattern = re.compile("href=['\"][^'\"]*" + extension + "['\"]", re.IGNORECASE)	
-	matches = pattern.findall(content)
+	pattern = re.compile(".*" + extension, re.IGNORECASE)
+	for link in all_links:
+		href = link["href"]
+		match = re.search(pattern, href)
+		if match:
+			date = link.parent.next_sibling.string
+			links.add(ExtractedLink(url+match.group(0), date))
 
-	anchor_pos = url.find("#")
-	if anchor_pos != -1:
-		url = url[0:anchor_pos]
-
-	base = url
-
-	query_string = base.find("?")
-	if query_string != -1:
-		base = base[0:query_string]
-
-	base_slash = base
-	last_slash = base_slash.rfind("/")
-	if last_slash != -1:
-		base_slash = base_slash[0:last_slash + 1]
-
-	for match in matches:
-		path_match=match[6:len(match)-1]
-		if path_match[0:4] == 'http' or path_match[0:2] == "//":
-			links.add(path_match)
-		elif path_match[0] == "#":
-			links.add(url+path_match)
-		elif path_match[0] == "?":
-			links.add(base+path_match)
-		else:
-			links.add(base_slash+path_match)
 	return list(links)
 
 def extract_pos(link):
